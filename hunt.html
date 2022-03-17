@@ -64,11 +64,12 @@
     <div class="col-sm-1"><img src="tree.jpg" id="id25" onclick="check(24)" alt="tree" style="width: 100px;height: 100px; padding-bottom: 5%;"></div>
     
 </div>
+<button type="button" class="btn btn-primary" onclick="reset()">reset</button>
 </body>
 <script>
     var ids=["id1","id2","id3","id4","id5","id6","id7","id8","id9","id10","id11","id12","id13","id14","id15","id16","id17","id18","id19","id20","id21","id22","id23","id24","id25"]
     var shakeCount=0;
-    var birdlLocation=18;
+    var birdlLocation=Math.floor(Math.random() * 25);
     function check(position)
       {
         id=ids[position]
@@ -119,7 +120,13 @@
            return 0
   
          }
-  </script>
+         function reset(){
+            shakeCount = 0;
+            document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
+            birdLocation = Math.floor(Math.random() * 25);
+        }
+
+</script>
 
 
 
